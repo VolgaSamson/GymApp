@@ -102,7 +102,7 @@ img{
 .card span{
     width: 3rem;
     height: 3rem;
-    background-color: blue;
+    background-color: #5271ff;
     color:var(--color-gray-100);
     font-size: 1.5rem;
     padding: 0.8rem;
@@ -135,7 +135,7 @@ img{
     position: relative;
     display: grid;
     place-items: center;
-    background: black;
+    background: #5271ff;
 }
 .header__container-bg{
     position: absolute;
@@ -145,6 +145,10 @@ img{
 .header__container-bg img{
     opacity: 0.5;
 }
+.leaflet-container {
+    width: 100wh; 
+    height: 100vh;
+  }
 .header__content{
     position: relative;
     width: 44%;

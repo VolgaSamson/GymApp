@@ -1,0 +1,63 @@
+
+
+@media screen  and (max-width:1024px){
+ 
+}
+@media screen  and (max-width:600px){
+    
+}
+
+button {
+    font-size: 16px;
+    margin-top: 50px;
+    color: yellow;
+    width: fit-content;
+    padding: 0.99rem 1rem;
+    background: #5271ff;
+    border-radius: 1.5rem;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+  .MapContainer{
+     height: 400px;
+      width: 90%; 
+      margin-top: 150px;
+      
+  }
+.searchcontainer{
+    background-color: white;
+    height: 400px;
+    width: 30%;
+    margin-top: 150px;
+    gap:3.5rem;
+}
+  .MapmainContainer{
+display: flex;
+gap:3.5rem;
+    align-items: center
+
+  }
+  p{
+    margin-top: 50px;
+    color: blue;
+  }
+
+  input {
+    width: 80;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Hover State */
+  input:hover {
+    border-color: #555;
+  }
+  
+  /* Focus State */
+  input:focus {
+    outline: none;
+  }
+  

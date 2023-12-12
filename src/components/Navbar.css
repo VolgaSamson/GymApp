@@ -1,7 +1,7 @@
 nav{
     height: 5rem;
     width:100vw;
-    background: blue;
+    background: #5271ff;
     display: grid;
     place-items: center;
     position: fixed;
@@ -17,7 +17,7 @@ nav{
 }
 .logo{
     width: 7rem;
-    margin-top: 17px;
+    margin-top: 12px;
 }
 .nav__links{
     display: flex;
@@ -35,7 +35,7 @@ content: '';
 display: block;
 width: 1.2rem;
 height: 1.2rem;
-background: blue;
+background: #5271ff;
 position: absolute;
 left:calc(50% -0.6rem);
 transform:rotate(45deg);
@@ -78,7 +78,7 @@ margin-top: 0.9rem;
         perspective: 400px;
     }
     .nav__links li a {
-        background-color: blue;
+        background-color: #5271ff;
         height: 100%;
         width:100%;
         display: flex;
