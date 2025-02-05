@@ -6,33 +6,78 @@
 .card.trainer{
     padding: 1rem;
 }
-.trainer__img{
-    border-radius:0 2rem;
+.trainer {
+    text-align: center;
+    padding: 1rem;
+}
+
+.trainer__img {
+    width: 100%;
+    margin: 0 auto;
     overflow: hidden;
-}
-.trainer p{
-    margin-top: 0.5rem;
-}
-.trainer h3{
-    margin-top: 2rem;
-}
-.trainer__socials{
     display: flex;
-    gap:1rem;
     justify-content: center;
     align-items: center;
-    margin: 2rem 0;
+    padding: 0.5rem;
 }
-.trainer__socials a{
-    font-size: 0.7rem;
-    background: var(--color-gray-600);
-    padding: 0.8rem;
-    border-radius: 0.7rem;
-    transition: var(--transition);
+
+.trainer__img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
 }
-.trainer:hover a{
-    background: var(--color-gray-500);
+
+.trainer h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
 }
+
+.trainer p {
+    font-size: 1rem;
+    color: gray;
+    margin-top: 0.5rem;
+}
+
+.trainer__socials {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.trainer__socials a {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.trainer__socials a:hover {
+    background-color: #bbb;
+}
+
+@media screen and (max-width: 600px) {
+    .trainer__img {
+        max-width: 120px;
+    }
+
+    .trainer h3 {
+        font-size: 1.2rem;
+    }
+
+    .trainer p {
+        font-size: 0.9rem;
+    }
+
+    .trainer__socials a {
+        font-size: 1rem;
+    }
+}
+
 @media screen  and (max-width:1024px){
     .trainers__container{
         grid-template-columns: 1fr 1fr;

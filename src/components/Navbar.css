@@ -37,7 +37,7 @@ width: 1.2rem;
 height: 1.2rem;
 background: blue;
 position: absolute;
-left:calc(50% -0.6rem);
+margin-left:12px;
 transform:rotate(45deg);
 margin-top: 0.9rem;
 }

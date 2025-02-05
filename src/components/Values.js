@@ -16,8 +16,11 @@ const Values=() =>{
             <div className='values__right'>
                 <SectionHead icon={<GiCutDiamond/>} title="values" />
                     <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officitis quidem aperiam
-                        sapiente?
+                    Our gym is built on values of commitment, empowerment, and inclusivity. 
+                    We strive to create a supportive environment where everyone, no matter their 
+                    fitness level, can grow, challenge themselves, and reach their goals. With a 
+                    focus on both physical and mental strength, we’re dedicated to helping you achieve
+                    lasting transformation and find a sense of community.
                     </p>
                     <div className='values__wrapper'>
                         {

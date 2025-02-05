@@ -1,33 +1,43 @@
+/* Gallery container */
 .gallery__container {
     display: grid;
-    grid-template-columns: repeat(3, 490px);
-    margin-left: 0;
-    
+    grid-template-columns: repeat(3, 3fr); /* Makes the grid responsive */
+    gap: 1rem; /* Adds space between images */
+    margin-left: 10;
 }
-.gallery__container article{
+
+.gallery__container article {
     border: 1rem solid transparent;
     transition: var(--transition);
-    
 }
-.gallery__container article:hover{
+
+/* Add hover effect */
+.gallery__container article:hover {
     border-color: gray;
 }
 
-@media screen  and (max-width:1024px){
-    .gallery__container{
-       
-        grid-template-columns: 1fr 1fr;
+/* For medium screens */
+@media screen and (max-width: 1024px) {
+    .gallery__container {
+        grid-template-columns: 1fr 1fr; /* 2 columns layout */
     }
-    .gallery__container article{
+    .gallery__container article {
         border: 0;
-        
-    }  
-}
-@media screen  and (max-width:600px){
-    .gallery__container{
-       
-        grid-template-columns: 1fr;
-        gap: 1rem;
     }
-     
+}
+
+/* For small screens */
+@media screen and (max-width: 600px) {
+    .gallery__container {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 1rem; /* Space between images */
+    }
+}
+
+/* Gallery images styling */
+.gallery__img {
+    width: 100%; /* Ensure the image takes full width */
+    height: auto; /* Keep the aspect ratio intact */
+    object-fit: cover; /* Ensures the image covers the space properly */
+    border-radius: 8px; /* Optional: Adds rounded corners to images */
 }

@@ -16,8 +16,8 @@ const Gallery = () =>{
             <div className='container gallery__container'>
                 {
                     images.map((image, index) =>{
-                        return <article key={index}>
-                            <img src={image} alt={`Gallery Image ${index + 1}`} />
+                        return <article key={index} className='gallery__article'>
+                            <img className='gallery__img' src={image} alt={`Gallery Image ${index + 1}`} />
                         </article>
                     })
                 }
