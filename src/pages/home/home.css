@@ -166,6 +166,8 @@ position: relative;
     position: relative;
     text-align: left;
     margin-top: 5rem;
+    min-height: 200px; /* You can increase this value as needed */
+    height: 300px; 
 }
 .testimonial__avatar  img{
     width: 4rem;
