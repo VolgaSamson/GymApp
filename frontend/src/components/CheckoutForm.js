@@ -32,7 +32,7 @@ const CheckoutForm = ({ plan, setLoading }) => {
     }
 
     
-    const response = await fetch('http://localhost:3000/create-payment-intent', {
+    const response = await fetch('https://gymappbackend.vercel.app/api/create-payment-intent', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
