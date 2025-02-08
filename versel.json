@@ -2,9 +2,12 @@
     "version": 2,
     "builds": [
       {
-        "src": "frontend/package.json",
-        "use": "@vercel/react"
-      },
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "frontend/build"
+      }
+    },
       {
         "src": "backend/api/*.js",
         "use": "@vercel/node"
