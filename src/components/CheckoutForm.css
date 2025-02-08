@@ -1,0 +1,35 @@
+
+
+
+.checkoutform button {
+    color:var(--color-gray-100);
+    
+    
+    background: blue;
+    transition: var(--transition);
+
+    padding: 1.2rem 3rem;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    cursor:pointer;
+}
+.checkoutform:hover button{
+    background: var(--color-secondary);
+    color: var(--color-gray-600);
+}
+
+.card.checkoutform{
+    width: 39%;
+    height: center;
+    display: flex;
+    align-content: space-around;
+    flex-direction: column;
+    gap: 58px;
+    background-color: #83c3c5;
+   
+}
+.checkoutform_main{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}

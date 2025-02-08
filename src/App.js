@@ -8,6 +8,7 @@ import Trainers from "./pages/trainers/trainers";
 import NotFound from "./pages/notFound/notFound";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Payment from './components/Payment';
 
 
 
@@ -23,6 +24,7 @@ const App = () =>{
                 <Route path='gallery' element={<Gallery/>}/>
                 <Route path='plans' element={<Plans/>}/>
                 <Route path='trainers' element={<Trainers/>}/>
+                <Route path='payment' element={<Payment/>}/>
                 <Route path='*' element={<NotFound/>}/>
             </Routes>
             <Footer/>
