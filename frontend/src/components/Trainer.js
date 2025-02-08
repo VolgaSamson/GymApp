@@ -10,7 +10,7 @@ const Trainer =({image, name, job, socials}) =>{
 <div className="trainer__socials">
 {
     socials.map(({icon,link}, index) =>{
-        return <a key={index} href={link} target="_blank" rel='noreffer noopener'>
+        return <a key={index} href={link} target="_blank" rel="noreffer noopener noreferrer">
             {icon}
         </a>
     })
