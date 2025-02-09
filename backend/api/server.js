@@ -7,13 +7,26 @@ const cors = require('cors');
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 const app = express();
 
-app.use(cors());
+
+const corsOptions = {
+  origin: 'https://gymappfrontend-5zp234rms-volga-samsons-projects.vercel.app/',  
+  methods: ['GET', 'POST', 'OPTIONS'],  
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'], 
+  credentials: true  
+};
+
+
+app.use(cors(corsOptions));
+
+
 app.use(bodyParser.json());
+
 
 app.post('/create-payment-intent', async (req, res) => {
   try {
     const { payment_method, amount } = req.body; 
 
+    
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amount,
       currency: 'usd',
@@ -21,6 +34,7 @@ app.post('/create-payment-intent', async (req, res) => {
       confirmation_method: 'automatic',
     });
 
+    
     res.json({ clientSecret: paymentIntent.client_secret });
   } catch (error) {
     console.error("Error creating PaymentIntent: ", error);
@@ -28,5 +42,8 @@ app.post('/create-payment-intent', async (req, res) => {
   }
 });
 
-// Export the app as a Vercel function handler
+
+app.options('*', cors(corsOptions));  
+
+
 module.exports = app;

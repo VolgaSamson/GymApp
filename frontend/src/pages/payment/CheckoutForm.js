@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import Card from '../UI/Card';
+import Card from '../../UI/Card'
 import './CheckoutForm.css';
 
 const CheckoutForm = ({ plan, setLoading }) => {

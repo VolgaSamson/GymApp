@@ -8,7 +8,7 @@ import Trainers from "./pages/trainers/trainers";
 import NotFound from "./pages/notFound/notFound";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Payment from './components/Payment';
+import Payment from './pages/payment/Payment';
 
 
 
