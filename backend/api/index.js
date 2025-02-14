@@ -1,22 +1,23 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
+dotenv.config();  // Load environment variables
 const express = require('express');
 const bodyParser = require('body-parser');
-const Stripe = require('stripe');
 const cors = require('cors');
-
+const Stripe = require('stripe');
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+
+
 const app = express();
 
-
-const corsOptions = {
-  origin: 'https://gymappfrontend-5zp234rms-volga-samsons-projects.vercel.app/',  
-  methods: ['GET', 'POST', 'OPTIONS'],  
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'], 
-  credentials: true  
+// CORS configuration
+const CorsConfig = {
+  origin: "*", 
+  credentials: true, 
+  methods: ["GET", "POST", "OPTIONS"], 
 };
 
 
-app.use(cors(corsOptions));
+app.use(cors(CorsConfig));
 
 
 app.use(bodyParser.json());
@@ -24,13 +25,13 @@ app.use(bodyParser.json());
 
 app.post('/create-payment-intent', async (req, res) => {
   try {
-    const { payment_method, amount } = req.body; 
+    const { paymentMethod, amount } = req.body;
 
     
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amount,
       currency: 'usd',
-      payment_method: payment_method,
+      payment_method: paymentMethod,
       confirmation_method: 'automatic',
     });
 
@@ -43,7 +44,10 @@ app.post('/create-payment-intent', async (req, res) => {
 });
 
 
-app.options('*', cors(corsOptions));  
-
-
 module.exports = app;
+
+
+if (process.env.NODE_ENV !== 'production') {
+  const port = process.env.PORT || 5001;
+  app.listen(port, () => console.log(`Server running on port ${port}`));
+}

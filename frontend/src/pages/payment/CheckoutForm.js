@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import Card from '../../UI/Card'
+import Card from '../../UI/Card';
 import './CheckoutForm.css';
 
 const CheckoutForm = ({ plan, setLoading }) => {
@@ -32,11 +32,11 @@ const CheckoutForm = ({ plan, setLoading }) => {
     }
 
     
-    const response = await fetch('https://gymappbackend.vercel.app/api/create-payment-intent', {
+    const response = await fetch('https://vawulensbackend.vercel.app/create-payment-intent', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        paymentMethod: paymentMethod.id,
+        payment_method: paymentMethod.id,
         amount: plan.price * 100, 
       }),
     });
