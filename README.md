@@ -1,6 +1,6 @@
 # Project Name
 
-Fat2Fit Gym application
+Vawulens Gym application
 
 ## Live Demo
 You can view the project live here: https://gymappfrontend.vercel.app/
