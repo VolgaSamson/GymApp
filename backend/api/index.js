@@ -1,5 +1,5 @@
 const dotenv = require('dotenv');
-dotenv.config();  // Load environment variables
+dotenv.config();  
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -22,11 +22,21 @@ app.use(cors(CorsConfig));
 
 app.use(bodyParser.json());
 
+const PLANS = {
+  "Silver Package": 29.99,  
+  "Gold Package": 49.99, 
+  "Platinum Package": 89.99 
+};
+
 
 app.post('/create-payment-intent', async (req, res) => {
   try {
-    const { paymentMethod, amount } = req.body;
+    const { paymentMethod, plan_name } = req.body;
 
+    if (!PLANS[plan_name]) {
+      return res.status(400).json({ error: 'Invalid plan selected' });
+    }
+    const amount = PLANS[plan_name]*100;
     
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amount,

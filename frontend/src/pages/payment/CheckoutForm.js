@@ -8,18 +8,18 @@ const CheckoutForm = ({ plan, setLoading }) => {
   const elements = useElements();
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
 
-  
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!stripe || !elements) {
+    if (!stripe || !elements || isProcessing) {
       return;
     }
 
     setLoading(true);
+    setIsProcessing(true); 
 
-    
     const { error: stripeError, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardElement),
@@ -28,23 +28,21 @@ const CheckoutForm = ({ plan, setLoading }) => {
     if (stripeError) {
       setError(stripeError.message);
       setLoading(false);
+      setIsProcessing(false); 
       return;
     }
 
-    
     const response = await fetch('https://vawulensbackend.vercel.app/create-payment-intent', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         payment_method: paymentMethod.id,
-        amount: plan.price * 100, 
+        plan_name: plan.name,
       }),
     });
 
     const { clientSecret } = await response.json();
-    console.log("Received clientSecret:", clientSecret);
 
-    
     const { error: confirmError, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
       payment_method: paymentMethod.id,
     });
@@ -52,11 +50,13 @@ const CheckoutForm = ({ plan, setLoading }) => {
     if (confirmError) {
       setError(confirmError.message);
       setLoading(false);
+      setIsProcessing(false); 
     } else {
       if (paymentIntent.status === 'succeeded') {
         setSuccess(true);
-        setLoading(false);
       }
+      setLoading(false);
+      setIsProcessing(false); 
     }
   };
 
@@ -73,8 +73,8 @@ const CheckoutForm = ({ plan, setLoading }) => {
         {error && <div style={{ color: 'red' }}>{error}</div>}
         {success && <div style={{ color: 'green' }}>Payment Successful!</div>}
 
-        <button type="submit" disabled={!stripe || !elements}>
-          Pay ${plan.price}
+        <button type="submit" disabled={!stripe || !elements || isProcessing  || success}>
+          {isProcessing ? 'Processing...' : `Pay $${plan.price}`}
         </button>
       </Card>
     </form>
