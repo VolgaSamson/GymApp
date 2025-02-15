@@ -269,13 +269,15 @@ gap:6rem;
     border-top: 2px solid blue;
     margin-top: 5rem;
 }
+/* For screens with a maximum width of 1024px (tablets and below) */
 @media screen and (max-width:1024px){
     .main__header{
         height: fit-content;
-        padding: 12rem 0;
+        padding: 8rem 0;
+        margin-top: 4rem;
     }
     .main__header-container{
-        gap: 0;
+        gap: 3rem;
     }
     .main__header-circle{
         width: 16rem;
@@ -287,76 +289,100 @@ gap:6rem;
     .values__container{
         grid-template-columns: 1fr;
         justify-content: center;
-        gap:4rem;
-
+        gap:3rem;
     }
     .values__wrapper{
-        gap:4rem 3rem;
-
+        gap:3rem 2rem;
     }
     .values__image{
         display: none;
     }
-    .faqs__wrapper{
-        grid-template-columns: 1fr;
-    }
-    .testimonials{
-        width: 75%;
-    }
-
-    .footer{
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-
-    }
-    @media screen  and (max-width: 600px){
-      .main__header{
-        margin-top: 0;
-        padding: 12rem 0 0;
-        height: 100vh;
-      } 
-      .main__header-image, .main__header-circle{
-        display: none;
-      } 
-      .main__header-container{
-        grid-template-columns: 1fr;
-      }
-      .programs__wrapper{
+    .faq__wrapper{
         grid-template-columns: 1fr;
         gap:2rem;
-        margin-top: 3rem;
-      }
-      .programs__program{
-        width: 34%;
-        margin: 0 auto;
-      }
-      .values__wrapper{
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-      .card.values__value{
-        width: 84%;
+    }
+    .testimonials{
+        width: 80%;
         margin-inline: auto;
-      }
-      .faqs__wrapper{
-        gap:1rem;
+    }
+    footer{
+        margin-top: 5rem;
+        padding: 6rem 0;
+    }
+    .footer__container{
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+    .footer__container article{
+        align-items: flex-start;
+    }
+}
+
+/* For screens with a maximum width of 600px (mobile devices) */
+@media screen and (max-width:600px){
+    .main__header{
+        margin-top: 0;
+        padding: 10rem 0 0;
+        height: 100vh;
+    } 
+    .main__header-image, .main__header-circle{
+        display: none;
+    } 
+    .main__header-container{
+        grid-template-columns: 1fr;
+    }
+    .programs__wrapper{
+        grid-template-columns: 1fr;
+        gap:1.5rem;
         margin-top: 3rem;
-      }
-      .testimonials{
+    }
+    .programs__program{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .values__wrapper{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .card.values__value{
+        width: 90%;
+        margin-inline: auto;
+    }
+    .faq__wrapper{
+        gap:1rem;
+        margin-top: 2rem;
+    }
+    .testimonials{
         width: 100%;
-      }
-      footer{
-        margin-top: 7rem;
-      }
-      .footer__container{
+    }
+    footer{
+        margin-top: 5rem;
+    }
+    .footer__container{
         grid-template-columns: 1fr;
         gap:3rem;
-      }
-      .footer__container article{
+    }
+    .footer__container article{
         align-items: center;
-      }
-      .footer__container article p {
         text-align: center;
-      }
+    }
+    .footer__container article p{
+        text-align: center;
+    }
+    .card.testimonial{
+        min-height: 250px; 
+        height: auto; 
+    }
+    .testimonial__avatar img{
+        width: 3rem;
+        height: 3rem;
+        top: -1.5rem;
+    }
+    .testimonials__btn-container{
+        flex-direction: column;
+    }
+    .testimonials__btn svg{
+        width: 2.5rem;
+        height: 2.5rem;
     }
 }
