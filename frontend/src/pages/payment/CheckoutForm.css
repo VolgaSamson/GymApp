@@ -26,10 +26,48 @@
     flex-direction: column;
     gap: 58px;
     background-color: #83c3c5;
+    margin-top:78px;
    
 }
 .checkoutform_main{
     display: flex;
     align-items: center;
     justify-content: center;  
+}
+
+@media (max-width: 768px) {
+    .card.checkoutform {
+        width: 90%; 
+        padding: 20px;
+        gap: 30px; 
+        margin-top:78px;
+    }
+
+    .checkoutform button {
+        padding: 1rem 2rem; 
+        font-size: 1rem; 
+    }
+
+    .checkoutform_main {
+        flex-direction: column; 
+        gap: 20px; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .card.checkoutform {
+        width: 100%; 
+        padding: 53px; 
+        margin-top:78px;
+    }
+
+    .checkoutform button {
+        padding: 0.8rem 1.5rem; 
+        font-size: 0.9rem; 
+    }
+
+    .checkoutform_main {
+        gap: 15px; 
+    }
 }

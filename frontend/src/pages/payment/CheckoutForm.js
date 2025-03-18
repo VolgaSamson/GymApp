@@ -74,7 +74,7 @@ const CheckoutForm = ({ plan, setLoading }) => {
         {success && <div style={{ color: 'green' }}>Payment Successful!</div>}
 
         <button type="submit" disabled={!stripe || !elements || isProcessing  || success}>
-          {isProcessing ? 'Processing...' : `Pay $${plan.price}`}
+        {isProcessing ? 'Processing...' : success ? 'Payment Completed' : `Pay $${plan.price}`}
         </button>
       </Card>
     </form>

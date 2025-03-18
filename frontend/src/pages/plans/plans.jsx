@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';  // Import useNavigate
+
 import './plans.css'
 import Header from '../../components/Header'
 import HeaderImage from '../../images/header_bg_4.jpg'
@@ -6,12 +6,7 @@ import Card from '../../UI/Card'
 import { plans } from '../../data'
 
 const Plans = () => {
-  const navigate = useNavigate();
-
-  const handleChoosePlan = (plan) => {
-    // Navigate to the payment page and pass the selected plan data
-    navigate('/payment', { state: { plan } });
-  };
+  
 
   return (
     <>
@@ -32,9 +27,7 @@ const Plans = () => {
                 {features.map(({ feature, available }, index) => {
                   return <p key={index} className={!available ? 'disabled' : ''}>{feature}</p>;
                 })}
-                <button className='btn-lg' onClick={() => handleChoosePlan({ id, name, price })}>
-                  Choose Plan
-                </button>
+                <Link to="/payment" className="btn lg">Choose Plan</Link>
               </Card>
             );
           })}

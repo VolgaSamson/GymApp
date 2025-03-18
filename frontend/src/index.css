@@ -158,6 +158,9 @@ img{
 .header__content p{
 color: rgba(255, 255, 255, 0.75);
 }
+.footer_logo{
+    width:100%;
+}
 
 @media screen and (max-width: 1024px) {
     .container {
@@ -193,6 +196,9 @@ color: rgba(255, 255, 255, 0.75);
         width: 2.5rem;
         height: 2.5rem;
         font-size: 1.2rem;
+    }
+    .footer_logo{
+        width:100%;
     }
 }
 
@@ -248,5 +254,8 @@ color: rgba(255, 255, 255, 0.75);
     .footer__container article {
         text-align: center;
         align-items: center;
+    }
+    .footer_logo{
+        width:100%;
     }
 }
