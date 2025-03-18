@@ -7,8 +7,12 @@ import { AiOutlineTwitter } from "react-icons/ai"
 import { BsInstagram } from 'react-icons/bs'
 import {trainers} from '../../data'
 import Trainer from '../../components/Trainer'
+import React, {  useEffect } from 'react';
 
 const Trainers = () =>{
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     return (
         <>
         <Header title="Our Trainers" image={HeaderImage}>

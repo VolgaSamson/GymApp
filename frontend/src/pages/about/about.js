@@ -4,8 +4,12 @@ import HeaderImage from '../../images/header_bg_1.jpg'
 import StoryImage from '../../images/about1.jpg'
 import VisionImage from '../../images/about2.jpg'
 import MissionImage from '../../images/about3.jpg'
+import React, {  useEffect } from 'react';
 import './about.css'
 const About = () =>{
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     return (
         <>
         <Header title="About Us" image={HeaderImage}>

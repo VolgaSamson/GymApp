@@ -1,7 +1,11 @@
 import Header from '../../components/Header';
 import HeaderImage from '../../images/header_bg_3.jpg'
 import './gallery.css'
+import React, {  useEffect } from 'react';
 const Gallery = () =>{
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     const Gallerylength = 15;
     const images = []
     for(let i=1;i<= Gallerylength; i++){

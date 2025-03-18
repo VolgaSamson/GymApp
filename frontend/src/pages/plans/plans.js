@@ -4,6 +4,7 @@ import Header from '../../components/Header'
 import HeaderImage from '../../images/header_bg_4.jpg'
 import Card from '../../UI/Card'
 import { plans } from '../../data'
+import React, {  useEffect } from 'react';
 
 const Plans = () => {
   const navigate = useNavigate();
@@ -12,6 +13,9 @@ const Plans = () => {
     // Navigate to the payment page and pass the selected plan data
     navigate('/payment', { state: { plan } });
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

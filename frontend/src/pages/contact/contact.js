@@ -4,7 +4,11 @@ import HeaderImage from '../../images/header_bg_2.jpg'
 import {MdEmail} from 'react-icons/md'
 import {BsMessenger} from 'react-icons/bs'
 import {IoLogoWhatsapp} from 'react-icons/io'
+import React, {  useEffect } from 'react';
 const Contact = () =>{
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     return (
         <>
         <Header title="Get In Touch" image={HeaderImage}>
